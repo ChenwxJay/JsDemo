@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!--设定CSS样式-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>鼠标移入/移出改变样式</title>
+	<style>
+      body{color:#fff;font:12px/1.5 Tahoma;}
+      #div1{width:150px;height:150px;margin:0 auto;padding:10px;background:black; border:10px solid #000;cursor:crosshair;}
+      #div1.hover{color:red;background:#f0f0f0;border:10px solid red;}
+    </style>
+    <script type="text/javascript">
+    	window.onload = function(){
+    		var oDiv = document.getElementById("div1");//根据节点ID获取元素，返回对象
+            oDiv.onmouseover = function(){ //绑定事件，鼠标在上面
+            	oDiv.className = "hover"; //注意修改样式，指定某一个写好的样式要使用字符串赋值
+            	alert("over!"); 
+            };
+            oDiv.onmouseout = function(){ //绑定事件，鼠标移开
+            	oDiv.className = "";
+            	alert("out!");
+            };
+        }
+    </script>
+</head>
+<body>
+	<div id="div1">鼠标移入改变样式，鼠标移除恢复</div>
+</body>
+</html>
+
