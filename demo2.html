@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>网页换肤</title>
+    <style>
+    	body,ul,li{margin:0;padding:0;}
+    	html,body{height: 100%}
+    	body{font:12px/1.5 Tahoma;} 
+    	li{list-style-type:none;}
+        a:link,a:visited{text-decoration:none;}
+        a:hover{text-decoration:underline;}
+    </style>
+    <!-- 加载外部CSS样式文件，需要自己写-->
+    <link href="green.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+    	window.onload = function ()
+    {
+	   var oLink = document.getElementsByTagName("link")[0];
+	   var oSkin = document.getElementById("skin").getElementsByTagName("li");
+	
+	for(var i = 0; i< oSkin.length; i++)
+	{		
+		oSkin[i].onclick = function ()
+		{
+			for(var p in oSkin) oSkin[p].className = "";
+			this.className = "current";
+			oLink['href'] = this.id + ".css";				
+		}	
+	}
+	
+
+    </script>
+
